@@ -8,11 +8,16 @@ categories: css
 ---
 div 标签居中显示的一些归类总结
 <!-- more -->
+>书是人类进步的阶梯。——高尔基
 #### 结构
+---
 ```html
-<div class="parent"><div class="child"></div></div>
+<div class="parent">
+    <div class="child"></div>
+</div>
 ```
 #### 样式
+---
 1.
 ```css
 div.parent {
@@ -63,6 +68,10 @@ div.child {
     justify-self: center;
     align-self: center;
 }
+/* 或着 */
+div.child {
+    margin: auto;
+}
 ```
 4.
 ```css
@@ -73,7 +82,44 @@ div.child{
   margin:auto;
 }
 ```
+5.
+```css
+div.parent {
+    font-size: 0;
+    text-align: center;
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+div.parent{
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+6.
+```css
+.parent {
+        display: table-cell;
+        height: 200px;
+        width: 200px;
+        background-color: orange;
+        text-align: center;
+        vertical-align: middle;
+}
+ .child {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+}
+```
+
 #### 参考资料
+---
 - [资料1](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/92)
 
 
